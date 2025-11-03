@@ -1,0 +1,152 @@
+.app-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: hsl(var(--foreground));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: white; /* optional but helps shadow appear clean */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container-headr{
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 40px;
+    width: auto;
+    overflow: hidden;
+}
+.logo img{
+    height: 100%;
+    width: auto;
+}
+
+.nav-links-ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.nav-links-ul li a {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.3s;
+}
+
+.nav-links-ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.nav-links-ul li a:hover::after {
+  width: 100%;
+}
+
+.nav-links-ul li a:hover {
+  color: hsl(var(--primary));
+}
+
+.header-buttons{
+    display: flex;
+    gap: 15px;
+  
+}
+.header-buttons button{
+    padding: 7px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.header-buttons .login-btn{
+    background-color: transparent;
+    color: hsl(var(--foreground));
+    border: 0px solid hsl(var(--border));
+    transition: .4s all ease-in-out ;
+}
+.header-buttons .login-btn:hover{
+    background-color: hsl(var(--primary-glow));
+}
+.header-buttons .signup-btn{
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+.header-buttons .signup-btn:hover{
+    background-color: hsl(var(--primary-glow));
+}
+@media (max-width: 768px) {
+  .nav-links-ul {
+    display: none; /* Hide navigation links on small screens */
+  }
+}
+@media (max-width: 480px) {
+  .header-buttons button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.order-btn {
+  background: hsl(var(--primary));
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background: hsl(var(--primary-glow));
+}
+
+.logout-btn {
+  background: transparent;
+  color: #333;
+  border: 1px solid hsl(var(--border));
+  padding: 7px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: hsl(var(--muted));
+}

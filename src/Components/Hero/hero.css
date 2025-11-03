@@ -1,0 +1,41 @@
+
+.hero-analytics{
+    background-color: #FFF4E5;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: space-between;
+
+}
+.hero-analytics .analytics-number{
+    font-size: 24px;
+    font-weight: 700;
+    color: #333333;
+}
+
+
+.hero-analytics img{
+    width: 40px;
+    height: 40px;
+}
+.hero-analytics .analytics-text{
+    font-size: 14px;
+    color: #FF6600;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .hero-analytics{
+        justify-content: center;
+    }
+}
+@media (max-width: 480px) {
+    .hero-analytics{
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}

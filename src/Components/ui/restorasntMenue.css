@@ -1,0 +1,145 @@
+.section-restaurants {
+    padding: 40px 0;
+}
+
+.container-restaurants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+    gap: 0.4rem;
+}
+
+.container-restaurantsMenue {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 2fr));
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 30px 0;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.card-restaurant {
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    /* ✅ smooth scale transition */
+    max-width: 400px;
+
+}
+
+.card-restaurant:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    /* ✅ smoother than 1.1 to keep layout stable */
+}
+
+/* ✅ Image smooth zoom */
+.card-restaurant img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    /* Smooth zoom */
+}
+
+/* ✅ When hover on card, zoom image */
+.card-restaurant:hover img {
+    transform: scale(1.1);
+}
+
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #666666;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #999999;
+}
+
+.card-info span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.button-resturant{
+    display: flex;
+    justify-content: center;
+    margin-top: .8rem;
+    margin-bottom: .3rem;
+}
+
+.button-resturant button {
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: #FF6600;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 8px 100px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-bottom: .4rem;
+    opacity: 0;
+    transition: opacity 0.4s ease, box-shadow 0.4s ease;
+}
+.card-restaurant:hover .button-resturant button {
+    opacity: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .container-restaurantsMenue {
+        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+        gap: 2rem;
+        padding: 20px 0;
+    }
+
+    .button-resturant {
+        position: relative;
+        z-index: 10;
+    }
+
+    .card-restaurant img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container-restaurantsMenue {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 15px 0;
+    }
+
+    .card-restaurant img {
+        height: 180px;
+    }
+}
