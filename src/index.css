@@ -8,3 +8,239 @@
 }
 
 
+
+
+@import "tailwindcss";
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 32% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 32% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 32% 7%;
+
+    --primary: 24 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 24 100% 60%;
+
+    --secondary: 210 32% 7%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 24 100% 65%;
+    --accent-foreground: 210 32% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 24 100% 50%;
+
+    --radius: 1rem;
+
+    /* 3D & Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 210 20% 90%;
+    --shadow-soft: 0 4px 24px -1px hsl(210 32% 7% / 0.08);
+    --shadow-3d: 0 8px 32px -2px hsl(210 32% 7% / 0.12), 0 2px 8px -1px hsl(210 32% 7% / 0.08);
+    --shadow-lifted: 0 20px 48px -4px hsl(210 32% 7% / 0.16), 0 4px 16px -2px hsl(210 32% 7% / 0.12);
+    --shadow-glow: 0 0 40px hsl(24 100% 50% / 0.3);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(24 100% 50%), hsl(18 100% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(24 100% 65%), hsl(30 100% 70%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(24 100% 98%) 100%);
+  }
+
+  .dark {
+    --background: 210 32% 7%;
+    --foreground: 0 0% 100%;
+
+    --card: 210 28% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 210 28% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 24 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 24 100% 60%;
+
+    --secondary: 210 28% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 28% 15%;
+    --muted-foreground: 210 10% 65%;
+
+    --accent: 24 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 28% 20%;
+    --input: 210 28% 20%;
+    --ring: 24 100% 50%;
+
+    --glass-bg: 210 28% 10% / 0.7;
+    --glass-border: 210 28% 20%;
+    --shadow-soft: 0 4px 24px -1px hsl(0 0% 0% / 0.3);
+    --shadow-3d: 0 8px 32px -2px hsl(0 0% 0% / 0.4), 0 2px 8px -1px hsl(0 0% 0% / 0.3);
+    --shadow-lifted: 0 20px 48px -4px hsl(0 0% 0% / 0.5), 0 4px 16px -2px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(24 100% 50% / 0.5);
+
+    --gradient-primary: linear-gradient(135deg, hsl(24 100% 50%), hsl(18 100% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(24 100% 55%), hsl(30 100% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 32% 7%) 0%, hsl(210 28% 10%) 100%);
+  }
+}
+
+
+.hero-container {
+  @apply flex items-center justify-between gap-10 py-20 px-8 max-w-7xl mx-auto;
+  background: var(--gradient-hero)
+}
+
+.left-hero {
+  @apply flex-1;
+}
+
+.container-text {
+  @apply space-y-15;
+}
+
+.hero-text h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4;
+}
+
+.hero-text h1 span {
+  @apply text-orange-500;
+}
+
+.hero-text p {
+  @apply text-gray-600 text-lg mb-8;
+}
+
+.hero-buttons {
+  @apply flex flex-col sm:flex-row gap-4 mb-8;
+}
+
+.btn-hero {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+}
+
+.btn-hero-primary {
+  @apply bg-orange-500 text-white hover:bg-orange-600;
+}
+
+.btn-hero-secondary {
+  @apply border-2 border-orange-500 text-orange-500 hover:bg-orange-50;
+}
+
+.hero-analytics {
+  @apply flex flex-col sm:flex-row gap-30 pt-10 border-t border-gray-200;
+}
+
+.analytics-item {
+  @apply flex flex-col items-start;
+}
+
+.analytics-item h2 {
+  @apply text-3xl font-bold text-orange-500 mb-1;
+}
+
+.analytics-item p {
+  @apply text-gray-600 text-sm;
+}
+
+.right-hero {
+  @apply flex-1 flex justify-center;
+}
+
+.hero-image {
+  @apply rounded-2xl overflow-hidden shadow-xl;
+}
+
+.hero-image img {
+  @apply w-full h-auto object-cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-container {
+    @apply flex-col-reverse gap-8;
+  }
+  
+  .hero-text h1 {
+    @apply text-3xl;
+  }
+  
+  .hero-buttons {
+    @apply flex-col;
+  }
+  
+  .hero-analytics {
+    @apply flex-col;
+  }
+}
+
+
+.btn-hero-primary {
+  background: var(--gradient-primary);
+  padding: 15px 60px;
+  transition:  0.5s ease, box-shadow 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+  box-shadow: var(--shadow-glow);
+  cursor: pointer;
+}
+
+.btn-hero-secondary {
+  padding: 10px 60px;
+}
+
+.btn-hero-secondary:hover {
+  background-color: rgba(255, 165, 0, 0.1);
+  cursor: pointer;
+}
+
+
+.hero-image {
+  @apply relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),  ease-out;
+   animation: float 3s ease-in-out infinite;
+   box-shadow: var(--shadow-3d); 
+}
+
+.hero-img {
+  @apply w-full h-auto object-cover block;
+  /* Initial state: slightly scaled down and faded */
+  
+}
+
+
+
+/* Float animation keyframes */
+@keyframes float {
+  0% {
+    transform:  translateY(0px);
+    
+  }
+  50% {
+    transform: translateY(-12px);
+    
+  }
+  100% {
+    transform: translateY(0px);
+    
+  }
+}
