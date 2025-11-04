@@ -1,0 +1,170 @@
+/* footer.css */
+.footer {
+  background-color: #0F0F0F;
+  color: #FFFFFF;
+  padding: 4rem 2rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Brand Section */
+.footer-brand .brand-name {
+  color: #FF6B00; /* Orange brand accent */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.footer-brand .brand-tagline {
+  color: #B0B0B0;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  max-width: 250px;
+  line-height: 1.5;
+}
+
+/* Links Columns */
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.link-column h4 {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.link-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-column li {
+  margin-bottom: 0.5rem;
+}
+
+.link-column a {
+  color: #B0B0B0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.link-column a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* Social Section */
+.footer-social h4 {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+}
+
+.social-icon:hover {
+  background-color: #FF6B00;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  color: #B0B0B0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand .brand-tagline {
+    max-width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .link-column {
+    text-align: center;
+  }
+
+  .footer-social {
+    margin-top: 2rem;
+  }
+
+  .footer-bottom {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 3rem 1rem 1.5rem;
+  }
+
+  .footer-brand .brand-name {
+    font-size: 1.3rem;
+  }
+
+  .link-column h4 {
+    font-size: 1rem;
+  }
+
+  .link-column a {
+    font-size: 0.9rem;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+}

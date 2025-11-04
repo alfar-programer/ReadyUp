@@ -5,16 +5,16 @@ const HowToUse = () => {
   return (
     <section className="py-16 md:py-24 bg-muted/30" id="how-to-use">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="container-text1 text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
             How To Use
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground  mx-auto">
             Follow these three simple steps to get started
           </p>
         </div>
 
-        <div className="cards grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="cards grid md:grid-cols-3 gap-8 ">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (

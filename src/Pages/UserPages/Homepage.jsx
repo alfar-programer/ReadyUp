@@ -4,6 +4,7 @@ import Footer from '../../Components/footer/Footer'
 import Hero from '../../Components/Hero/Hero'
 import RestaurantMenu from '../../Components/ui/RestorantMenue'
 import HowToUse from '../../Components/ui/HowToUse'
+import Review from '../../Components/ui/Review'
 
 const Homepage = () => {
   return (
@@ -12,7 +13,8 @@ const Homepage = () => {
     < Hero />
     <RestaurantMenu />
     <HowToUse />
-   {/* <Footer /> */}
+    <Review />
+   <Footer />
     </>
   )
 }
