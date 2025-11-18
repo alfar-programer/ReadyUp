@@ -1,10 +1,15 @@
-import AppRoutes from "./Routes/routes.jsx";
+import React from "react";
+import AppRoutes from "./Routes/routes";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/footer/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <Header />
       <AppRoutes />
-    </div>
+      <Footer />
+    </>
   );
 }
 

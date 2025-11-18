@@ -5,52 +5,58 @@
   padding: 0 20px;
   color: hsl(var(--foreground));
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  background-color: white; /* optional but helps shadow appear clean */
+  background-color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.container-headr{
-    max-width: 1300px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.container-headr {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo{
-    height: 40px;
-    width: auto;
-    overflow: hidden;
-}
-.logo img{
-    height: 100%;
-    width: auto;
+.logo {
+  height: 40px;
+  width: auto;
+  overflow: hidden;
 }
 
-.nav-links-ul{
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    align-items: center;
-    justify-content: space-around;
+.logo img {
+  height: 100%;
+  width: auto;
 }
 
+/* =======================
+   Navbar links
+======================= */
+.nav-links-ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
 
 .nav-links-ul li a {
   position: relative;
   font-size: 16px;
   font-weight: 500;
   color: #000000;
+  text-decoration: none;
   padding: 8px 12px;
   border-radius: 6px;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-links-ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 4px;
   left: 0;
@@ -68,48 +74,49 @@
   color: hsl(var(--primary));
 }
 
-.header-buttons{
-    display: flex;
-    gap: 15px;
-  
-}
-.header-buttons button{
-    padding: 7px 20px;
-    font-size: 14px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-.header-buttons .login-btn{
-    background-color: transparent;
-    color: hsl(var(--foreground));
-    border: 0px solid hsl(var(--border));
-    transition: .4s all ease-in-out ;
-}
-.header-buttons .login-btn:hover{
-    background-color: hsl(var(--primary-glow));
-}
-.header-buttons .signup-btn{
-    background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-}
-.header-buttons .signup-btn:hover{
-    background-color: hsl(var(--primary-glow));
-}
-@media (max-width: 768px) {
-  .nav-links-ul {
-    display: none; /* Hide navigation links on small screens */
-  }
-}
-@media (max-width: 480px) {
-  .header-buttons button {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
+/* =======================
+   Buttons (Login / Signup / UserMenu)
+======================= */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
+.header-buttons button,
+.header-buttons a {
+  padding: 7px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+}
 
+.login-btn {
+  background-color: transparent;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  transition: 0.4s all ease-in-out;
+}
+
+.login-btn:hover {
+  background-color: hsl(var(--primary-glow));
+}
+
+.signup-btn {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.signup-btn:hover {
+  background-color: hsl(var(--primary-glow));
+}
+
+/* =======================
+   User Menu (After login)
+======================= */
 .user-menu {
   display: flex;
   align-items: center;
@@ -121,6 +128,7 @@
   height: 35px;
   border-radius: 50%;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .order-btn {
@@ -149,4 +157,32 @@
 
 .logout-btn:hover {
   background: hsl(var(--muted));
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 768px) {
+  .nav-links-ul {
+    display: none;
+  }
+
+  .header-buttons button,
+  .header-buttons a {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-buttons button,
+  .header-buttons a {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+  }
 }

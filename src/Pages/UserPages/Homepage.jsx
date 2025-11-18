@@ -9,12 +9,10 @@ import Review from '../../Components/ui/Review'
 const Homepage = () => {
   return (
     <>
-    <Headers />
     < Hero />
     <RestaurantMenu />
     <HowToUse />
     <Review />
-   <Footer />
     </>
   )
 }

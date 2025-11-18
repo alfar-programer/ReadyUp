@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { restaurantsData } from "../../Data/Data";
 import "./restorasntMenue.css";
 import SearchSection from "../search/SearchSection";
+import { Link } from "react-router-dom";
 
 const RestorantMenue = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -15,7 +16,7 @@ const RestorantMenue = () => {
         );
 
   return (
-    <section className="section-restaurants py-12 px-6">
+    <section id="restaurants" className="section-restaurants py-12 px-6">
       <SearchSection onCategoryChange={setSelectedCategory} />
 
       <div className="container-restaurants text-center mb-10">
@@ -52,11 +53,12 @@ const RestorantMenue = () => {
                 <span>📍 {restaurant.distance}</span>
               </div>
             </div>
-
             <div className="button-resturant">
-              <button className="bg-[#FF6600] text-white font-medium py-2 px-6 rounded-lg shadow-md hover:bg-[#e65c00] transition-all duration-200">
-                <a href="#">Order Now</a>
-              </button>
+              <Link to={`/restaurant/${restaurant.id}`}>
+                <button className="bg-[#FF6600] text-white font-medium py-2 px-6 rounded-lg shadow-md hover:bg-[#e65c00] transition-all duration-200">
+                  Order Now
+                </button>
+              </Link>
             </div>
           </div>
         ))}

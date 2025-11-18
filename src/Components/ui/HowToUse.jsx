@@ -3,7 +3,7 @@ import { steps } from "../../Data/Data"; // ✅ Correct import
 
 const HowToUse = () => {
   return (
-    <section className="py-16 md:py-24 bg-muted/30" id="how-to-use">
+    <section  className="py-16 md:py-24 bg-muted/30" id="how-to-use">
       <div className="container mx-auto px-4">
         <div className="container-text1 text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">

@@ -1,18 +1,7 @@
-import { Navigate } from "react-router-dom";
-import { getUserType } from "../Constant/auth";
+import { Navigate, Outlet } from "react-router-dom";
 
-const ProtectedRoute = ({ children, allowedRoles }) => {
-  const userType = getUserType();
-
-  if (!userType) {
-    return <Navigate to="/login" replace />;
-  }
-
-  if (!allowedRoles.includes(userType)) {
-    return <Navigate to="/" replace />;
-  }
-
-  return children;
+const ProtectedRoute = ({ isAllowed, redirectTo = "/login" }) => {
+  return isAllowed ? <Outlet /> : <Navigate to={redirectTo} replace />;
 };
 
 export default ProtectedRoute;

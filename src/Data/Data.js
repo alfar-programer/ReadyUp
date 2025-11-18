@@ -1,3 +1,6 @@
+// mock Data for restaurants
+  
+
 export const restaurantsData = [
   {
     id: 1,
@@ -6,6 +9,7 @@ export const restaurantsData = [
     time: "15-20 min",
     distance: "0.3 mi",
     rating: 4.8,
+    review:"(150 reviews)",
     image: "/Homepageimgs/Gad.webp",
     category: "Food",
   },

@@ -1,0 +1,367 @@
+/* RestaurantPage.css */
+.restaurant-page-main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.restaurant-header {
+  margin-bottom: 20px;
+}
+
+.restaurant-header .back-link a {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.restaurant-header .back-link a:hover {
+  text-decoration: underline;
+}
+
+.restaurant-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.cuisine-type {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.restaurant-stats {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.restaurant-page-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.your-order-card {
+  flex: 1;
+  min-width: 280px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.your-order-card h3 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.empty-order {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.menu-items-section {
+  flex: 2;
+  min-width: 300px;
+}
+
+.menu-search {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.menu-items-main h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.menu-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item-card {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.menu-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.menu-item-info {
+  flex: 1;
+}
+
+.menu-item-name {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.menu-item-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 10px;
+}
+
+.menu-item-price {
+  font-weight: 700;
+  color: #111827;
+}
+
+.add-to-order-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #10b981;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-order-btn:hover {
+  background: #0da271;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .restaurant-page-content {
+    flex-direction: column;
+  }
+
+  .your-order-card {
+    position: static;
+  }
+}
+
+
+/* In RestaurantPage.css */
+
+.add-to-order-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #10b981;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.add-to-order-btn:hover {
+  background: #0da271;
+}
+
+.add-to-order-btn.added {
+  background: #ef4444; /* red for remove */
+}
+
+.add-to-order-btn.added:hover {
+  background: #dc2626;
+}
+
+/* Order items styling */
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.order-total {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+  font-weight: 600;
+}
+
+/* Quantity Controller */
+.quantity-controller {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f3f4f6;
+  padding: 4px;
+  border-radius: 20px;
+  height: 36px;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: #1f2937;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.qty-btn:hover {
+  background: #e5e7eb;
+}
+
+.qty-value {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Existing add-to-order-btn stays for initial + */
+.add-to-order-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #e65c00;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.add-to-order-btn:hover {
+  background: #e77a31;
+}
+
+/* Order item quantity */
+.item-quantity {
+  color: #6b7280;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e65c00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.2s;
+}
+
+.checkout-btn:hover {
+  background: #e77a31;
+}
+
+.checkout-btn:disabled {
+  background: #e65c00;
+  cursor: not-allowed;
+}
+
+/* ====== Header with Background Image ====== */
+.restaurant-header-bg {
+  position: relative;
+  padding: 60px 20px 40px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Make sure text is readable over the image */
+.restaurant-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.cuisine-type {
+  font-size: 16px;
+  color: #4b5563;
+  margin: 0;
+}
+
+.restaurant-stats {
+  font-size: 15px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.back-link a {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.back-link a:hover {
+  text-decoration: underline;
+}

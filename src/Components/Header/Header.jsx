@@ -1,43 +1,114 @@
-import React, { useState } from 'react'
-import './header.css'
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./header.css";
 
 const Header = () => {
-  // حالة تسجيل الدخول (مؤقتة، بعدين ممكن نربطها بـ Context أو Auth)
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  const [role, setRole] = useState(localStorage.getItem("role"));
+  const isLoggedIn = !!role;
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setRole(localStorage.getItem("role"));
+    };
+
+    // Listen for login/logout from other components
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("role");
+    setRole(null);
+    navigate("/login");
+  };
 
   return (
     <header className="app-header">
-      <div className='container-headr'>
-        <div className='logo'>
-          <img src="/public/imgs Brand/logo/logoReadyUP.png" alt="loading-logo" className='logoimg' />
+      <div className="container-headr">
+        <div className="logo">
+          <Link to="/">
+            <img
+              src="/imgs Brand/logo/logoReadyUP.png"
+              alt="loading-logo"
+              className="logoimg"
+            />
+          </Link>
         </div>
 
-        <nav className='nav-links'>
-          <ul className='nav-links-ul'>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Restaurants</a></li>
-            <li><a href="#">How it Works</a></li>
-            <li><a href="#">Contact</a></li>
+        <nav className="nav-links">
+          <ul className="nav-links-ul">
+            <li><Link to="/">Home</Link></li>
+            <li><a href="/#restaurants">Restaurants</a></li>
+            <li><a href="/#how-to-use">How it Works</a></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
 
-        <div className='header-buttons'>
+        <div className="header-buttons">
           {isLoggedIn ? (
-            <div className="user-menu">
-              <img src="/public/imgs Brand/profile-icon.png" alt="Profile" className="profile-icon" />
-              <button className="order-btn">My Orders</button>
-              <button className="logout-btn" onClick={() => setIsLoggedIn(false)}>Logout</button>
-            </div>
+            <>
+              {role === "user" && (
+                <div className="user-menu">
+                  <img
+                    src="/imgs Brand/profile-icon.png"
+                    alt="Profile"
+                    className="profile-icon"
+                  />
+                  <button
+                    className="order-btn"
+                    onClick={() => navigate("/orders")}
+                  >
+                    My Orders
+                  </button>
+                  <button className="logout-btn" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </div>
+              )}
+
+              {role === "admin" && (
+                <div className="user-menu">
+                  <button
+                    onClick={() => navigate("/admin-dashboard")}
+                    className="order-btn"
+                  >
+                    Dashboard
+                  </button>
+                  <button className="logout-btn" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </div>
+              )}
+
+              {role === "restaurant" && (
+                <div className="user-menu">
+                  <button
+                    onClick={() => navigate("/restaurant-dashboard")}
+                    className="order-btn"
+                  >
+                    Dashboard
+                  </button>
+                  <button className="logout-btn" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </div>
+              )}
+            </>
           ) : (
             <>
-              <button className='login-btn' onClick={() => setIsLoggedIn(true)}> <a href="login"> Login</a></button>
-              <button className='signup-btn'>Sign Up</button>
+              <Link to="/login" className="login-btn">
+                Login
+              </Link>
+              <Link to="/signup" className="signup-btn">
+                Sign Up
+              </Link>
             </>
           )}
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
